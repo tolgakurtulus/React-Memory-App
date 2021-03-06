@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Form = ({ list, setList, name, setName, description, setDescription, places, setPlaces, date, setDate, url, setUrl }) => {
+const Form = ({ lists, setLists, name, setName, description, setDescription, places, setPlaces, date, setDate, url, setUrl }) => {
 
     const submitDataHandler = (e) => {
         e.preventDefault();
-        setList([
-            ...list,
-            { name: name, description: description, places: places, date: date, url: url, id: Math.random() * 100 },
+        setLists([
+            ...lists,
+            { nameVal: name, descriptionVal: description, placesVal: places, dateVal: date, urlVal: url, id: Math.random() * 100 },
         ]);
         setName("");
         setDescription("");
@@ -40,7 +40,6 @@ const Form = ({ list, setList, name, setName, description, setDescription, place
                 <input type="text" className="form-control" id="exampleFormControlFile" placeholder="Memory Photo Url" value={url} onChange={(e) => setUrl(e.target.value)}/>
             </div>
             <button type="button" className="btn btn-primary btn-block" onClick={submitDataHandler}>Submit</button>
-
             </form>
         </div>
     );

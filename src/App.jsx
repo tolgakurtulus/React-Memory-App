@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.scss';
 import Header from "./Components/Header"
 import Form from "./Components/Form"
-import Card from "./Components/Card"
+import CardList from "./Components/CardList"
 
 
 const App = () => {
 
-  let [list, setList] = useState([]);
+  let [lists, setLists] = useState([]);
   let [name, setName] = useState("");
   let [description, setDescription] = useState("");
   let [places, setPlaces] = useState("");
@@ -22,13 +22,13 @@ const App = () => {
       <div className="container-fluid">
         <Header />
         <div className="row">
-        <Card 
-          list={list}
-          setList={setList}
+        <CardList 
+          lists={lists}
+          setLists={setLists}
         />
         <Form 
-          list={list}
-          setList={setList}
+          lists={lists}
+          setLists={setLists}
           name={name}
           setName={setName}
           description={description}

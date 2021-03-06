@@ -1,40 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Card = ({name, description, places, date, url}) => {
+const Card = ({nameVal, descriptionVal, placesVal, dateVal, urlVal, lists, key }) => {
+
+    
+      useEffect(() => {
+        // UpdateVal the document title using the browser API
+        console.log("TEST", nameVal);
+        console.log("TEST3", key);
+        console.log("TEST2", lists);
+        console.log("TEST5", lists[0].nameVal);
+      });
+    
 
     return (
-        <div className="col-6 col-lg-9">
-            <div className="row">
-                <div className="card text-center col-12 col-lg-6">
+        // <img src="https://image.shutterstock.com/image-photo/amazing-bird-eyes-view-maldives-600w-724331194.jpg" className="card-img-top" alt="photo" />
+        <div className="card text-center col-12 col-lg-6">
                     <div className="card-header">
-                        Featured
+                        {placesVal}
                     </div>
-                    <img src="https://image.shutterstock.com/image-photo/amazing-bird-eyes-view-maldives-600w-724331194.jpg" className="card-img-top" alt="photo" />
-                    <div className="card-body">
-                        <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div className="card-footer text-muted">
-                        2 days ago
-                    </div>
-                </div>
-                
-                <div className="card text-center col-12 col-lg-6">
-                    <div className="card-header">
-                        {places}
-                    </div>
-                    <img src={url} className="card-img-top" alt={name} />
+                    <img src={urlVal} className="card-img-top" alt={nameVal} />
 
                     <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className="card-text">{description}</p>
+                        <h5 className="card-title">{nameVal}</h5>
+                        <p className="card-text">{descriptionVal}</p>
                     </div>
                     <div className="card-footer text-muted">
-                        {date}
+                        {dateVal}
                     </div>
                 </div>
-            </div>
-        </div>
     );
 }
 
