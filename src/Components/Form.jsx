@@ -15,7 +15,6 @@ const Form = ({ lists, setLists, name, setName, description, setDescription, pla
         setUrl("");
     };
   
-
     return (
         <div className="col-6 col-lg-3">
             <form>
